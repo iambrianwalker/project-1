@@ -24,4 +24,16 @@ class MonthlyExpense{
       expenseAmount: map['expense_amount'],
     );
   }
+
+  MonthlyExpense copyWith({
+    int? id,
+    String? expenseName,
+    String? expenseAmount,
+  }) {
+    return MonthlyExpense(
+      id: id ?? this.id ,
+      expenseName: expenseName ?? this.expenseName, 
+      expenseAmount: expenseAmount ?? this.expenseAmount
+    );
+  }
 }
