@@ -28,4 +28,20 @@ class JobScenario{
       wage: map['wage'],
     );  
   }
+
+  JobScenario copyWith({
+    int? id,
+    String? employerName,
+    String? payType,
+    String? wage
+  }) {
+    return JobScenario(
+      id: id ?? this.id,
+      employerName: employerName ?? this.employerName,
+      payType: payType ?? this.payType,
+      wage: wage ?? this.wage,
+    );
+  }
+
+  
 }
