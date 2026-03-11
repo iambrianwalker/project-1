@@ -3,12 +3,14 @@ class JobScenario{
   final String employerName;
   final String payType;
   final String wage;
+  final String deduction;
 
   JobScenario({
     this.id,
     required this.employerName,
     required this.payType,
-    required this.wage
+    required this.wage,
+    required this.deduction,
   });
 
   Map <String, dynamic> toMap(){
@@ -17,6 +19,7 @@ class JobScenario{
       'employer_name' : employerName,
       'pay_type' : payType,
       'wage' : wage,
+      'deduction' : deduction,
     };
   }
 
@@ -26,6 +29,7 @@ class JobScenario{
       employerName: map['employer_name'], 
       payType: map['pay_type'], 
       wage: map['wage'],
+      deduction: map['deduction']
     );  
   }
 
@@ -33,15 +37,15 @@ class JobScenario{
     int? id,
     String? employerName,
     String? payType,
-    String? wage
+    String? wage,
+    String? deduction
   }) {
     return JobScenario(
       id: id ?? this.id,
       employerName: employerName ?? this.employerName,
       payType: payType ?? this.payType,
       wage: wage ?? this.wage,
+      deduction: deduction ?? this.deduction,
     );
   }
-
-  
 }
