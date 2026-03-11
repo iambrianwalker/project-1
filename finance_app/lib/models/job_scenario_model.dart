@@ -19,4 +19,13 @@ class JobScenario{
       'wage' : wage,
     };
   }
+
+  factory JobScenario.fromMap(Map<String, dynamic> map){
+    return JobScenario(
+      id: map['id'],
+      employerName: map['employer_name'], 
+      payType: map['pay_type'], 
+      wage: map['wage'],
+    );  
+  }
 }
