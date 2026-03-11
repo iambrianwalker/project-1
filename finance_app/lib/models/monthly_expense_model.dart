@@ -11,9 +11,17 @@ class MonthlyExpense{
 
   Map <String, dynamic> toMap() {
     return{
-      'id' : id,
+      'expense_id' : id,
       'expense_name' : expenseName,
       'expense_amount' : expenseAmount,
     };
+  }
+
+  factory MonthlyExpense.fromMap(Map <String, dynamic> map){
+    return MonthlyExpense(
+      id: map['expense_id'],
+      expenseName: map['expense_name'], 
+      expenseAmount: map['expense_amount'],
+    );
   }
 }
