@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:sqflite_common_ffi/sqflite_ffi.dart';
+import 'dart:io';
 
-void main() {
+Future<void> main() async {
+  //this code will allow sqflite to run on windows
+  WidgetsFlutterBinding.ensureInitialized();
+
+  if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
+    sqfliteFfiInit();
+    databaseFactory = databaseFactoryFfi;
+  }
+  //end of sqflite setup
+
   runApp(const MyApp());
 }
 
