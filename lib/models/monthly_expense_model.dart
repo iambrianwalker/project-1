@@ -33,12 +33,13 @@ class MonthlyExpense{
     int? id,
     String? expenseName,
     String? expenseAmount,
+    String? expenseCategory
   }) {
     return MonthlyExpense(
       id: id ?? this.id ,
       expenseName: expenseName ?? this.expenseName, 
       expenseAmount: expenseAmount ?? this.expenseAmount,
-      expenseCategory: expenseCategory
+      expenseCategory: expenseCategory ?? this.expenseCategory
     );
   }
 }
