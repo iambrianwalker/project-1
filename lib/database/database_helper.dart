@@ -1,5 +1,6 @@
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:finance_app/database/table_names.dart';
 
 class DatabaseHelper {
   static final DatabaseHelper instance = DatabaseHelper._initialize();
@@ -36,7 +37,7 @@ class DatabaseHelper {
   Future<void> _createDB(Database db, int version) async {
     //monthly_expenses table
     await db.execute('''
-      CREATE TABLE monthly_expenses (
+      CREATE TABLE ${TableNames.monthlyExpenses} (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
         amount REAL NOT NULL,
