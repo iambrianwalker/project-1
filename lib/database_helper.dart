@@ -4,9 +4,9 @@ import 'package:sqflite/sqflite.dart';
 class DatabaseHelper {
   static final DatabaseHelper instance = DatabaseHelper._initialize();
   static Database? _database;
-  String fileName = 'finance_app.db';
+  final String fileName = 'finance_app.db';
   //version of the database, increment this when you make changes to the database schema
-  int dbCurrentVersion = 1;
+  final int dbCurrentVersion = 1;
 
   DatabaseHelper._initialize();
 
